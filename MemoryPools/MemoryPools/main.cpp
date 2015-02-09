@@ -1,7 +1,13 @@
 ///HEJ MYSTERISK!
 ///HEJ JAWS!
 //Memory Pool
+
 #include "Heap.h"
+
+static void* operator new(size_t p_size, Heap* p_heap);
+static void operator delete(void* p_memory);
+static void operator delete(void* p_memory, Heap* p_heap);
+
 #include "Object.h"
 
 
@@ -39,8 +45,8 @@ void main()
 {
 	Heap* standardHeap = new Heap("Standard");
 
-	Object* testObject = new (standardHeap)Object();
-	Object* testObject2 = new (standardHeap)Object();
+	Object* testObject = new Object();
+	Object* testObject2 = new Object();
 
 	delete testObject;
 
