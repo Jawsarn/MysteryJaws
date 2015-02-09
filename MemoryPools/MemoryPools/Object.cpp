@@ -3,7 +3,7 @@
 
 Object::Object()
 {
-	name = 1;
+
 }
 
 

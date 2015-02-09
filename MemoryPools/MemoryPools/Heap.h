@@ -1,4 +1,5 @@
 #pragma once
+#include <Windows.h>
 #define NAMELENGHT 1024
 
 class Heap
@@ -12,14 +13,16 @@ public:
 
 	void AddAllocation(size_t p_size);
 	void RemoveAllocation(size_t p_size);
-	struct AllocHeader
-	{
-		Heap* m_heap;
-		int m_size;
-	};
+	
 private:
 	char m_name[NAMELENGHT];
 	size_t m_currSize;
 
+};
+
+struct AllocHeader
+{
+	Heap* m_heap;
+	int m_size;
 };
 
