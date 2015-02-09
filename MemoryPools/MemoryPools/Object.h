@@ -7,5 +7,7 @@ class Object
 public:
 	Object();
 	~Object();
+
+	void Addobject();
 };
 
