@@ -17,8 +17,6 @@ Object::~Object()
 
 void Object::Addobject()
 {
-	Heap* standardHeap = new Heap("Standard");
-
 	Object* testObject = new Object();
 	Object* testObject2 = new Object();
 

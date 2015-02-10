@@ -4,6 +4,7 @@
 #include "heap.h"
 
 extern void* operator new(size_t p_size, Heap* p_heap);
+//extern void* operator new(size_t p_size);
 extern void operator delete(void* p_memory);
 extern void operator delete(void* p_memory, Heap* p_heap);
 
