@@ -1,15 +1,9 @@
 ///HEJ MYSTERISK!
 ///HEJ JAWS!
 //Memory Pool
-
-#include "Heap.h"
-
-static void* operator new(size_t p_size, Heap* p_heap);
-static void operator delete(void* p_memory);
-static void operator delete(void* p_memory, Heap* p_heap);
-
+//#include "main.h"
 #include "Object.h"
-
+#include "Heap.h"
 
 void* operator new(size_t p_size, Heap* p_heap)
 {
@@ -49,7 +43,8 @@ void main()
 	Object* testObject2 = new Object();
 
 	delete testObject;
-
+	testObject2->Addobject();
+	delete testObject2;
 	int test3 = 5;
 
 	return;

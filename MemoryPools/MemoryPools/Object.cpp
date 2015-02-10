@@ -1,9 +1,12 @@
 #include "Object.h"
 
+//#include <new>
+
+Heap * Object::m_heap = nullptr;
 
 Object::Object()
 {
-	Heap* m_heap = new Heap("test");
+	int test3 = 5;
 }
 
 
@@ -20,16 +23,20 @@ void Object::Addobject()
 	Object* testObject2 = new Object();
 
 	delete testObject;
-
+	delete testObject2;
 	int test3 = 5;
 
 }
 
 void* Object::operator new(size_t size)
 {
-	return ::operator new(size, m_heap);
+	if (m_heap == nullptr)
+	{
+		m_heap = new Heap("test");
+	}
+	return ::operator new (size, m_heap);
 }
-void Object::operator delete(void*)
+void Object::operator delete(void* p_memory)
 {
-
+	::operator delete(p_memory);
 }
